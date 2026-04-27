@@ -1,17 +1,29 @@
+:root {
+    --grey-700: #333333;
+    --grey-800: #1F1F1F;
+    --grey-900: #141414;
+    --green: #C4F82A;
+    --white: #FFFFFF;
+}
+
 .attribution {
-    margin-bottom: 4px;
     font-size: 0.6875rem;
     text-align: center;
-    color: #333333;
+    color: var(--grey-700);
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
 
+.grid-content-centered {
+    display: grid;
+    place-content: center;
+}
+
 .text-preset-1 {
     font-family: "Inter", sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     line-height: 150%;
     letter-spacing: 0;
@@ -33,88 +45,90 @@
     letter-spacing: 0;
 }
 
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    background-color: #141414;
+    background-color: var(--grey-900);
+}
 
-    .main-container {
-        flex: 1;
-        display: grid;
-        place-content: center;
+.main-container {
+    flex: 1;
+}
 
-        .card-container {
-            display: grid;;
-            place-content: center;
-            gap: 24px;
-            width: 384px;
-            height: 611px;
-            margin: 40px;
-            background-color: #1F1F1F;
-            border-radius: 12px;
+.card-container {
+    gap: 1.5rem;               /* use rem for scalable spacing */
+    width: min(90vw, 384px);   /* fluid: up to 384px, but no more than 90% of viewport */
+    max-width: 384px;          /* explicit max to preserve desktop design */
+    height: auto;              /* avoid fixed height so content flows naturally */
+    min-height: 40vh;          /* optional: ensure a reasonable minimum height on tall screens */
+    box-sizing: border-box;    /* include padding/borders in size calculations */
+    padding: 1rem;             /* room for content so it doesn't touch edges */
+    margin: 2.5rem;
+    background-color: var(--grey-800);
+    border-radius: 12px;
+}
 
-            .profile-pic-container {
-                display: grid;
-                place-content: center;
+.profile-pic-container img {
+    width: 88px;
+    height: 88px;
+    border-radius: 999px;
+}
 
-                img {
-                    width: 88px;
-                    height: 88px;
-                    border-radius: 999px;
-                }
-            }
+.name-text {
+    width: 304px;
+    height: 36px;
+    text-align: center;
+    color: var(--white);
+    margin: 0;
+}
 
-            .name-location-container {
-                .name-text {
-                    width: 304px;
-                    height: 36px;
-                    text-align: center;
-                    color: white;
-                    margin: 0;
-                }
+.location-text {
+    text-align: center;
+    color: var(--green);
+    margin: 0;
+}
 
-                .location-text {
-                    text-align: center;
-                    color: #C4F82A;
-                    margin: 0;
-                }
-            }
+.bio-container {
+    text-align: center;
+    color: var(--white);
+}
 
-            .bio-container {
-                text-align: center;
-                color: white;
-            }
+.social-links-container {
+    gap: 1rem;
+    width: 304px;
+    height: 289px;
+}
 
-            .social-links-container {
-                display: grid;
-                place-content: center;
-                gap: 16px;
-                width: 304px;
-                height: 289px;
+.social-link-container {
+    display: grid;
+    place-content: center;
+    width: 304px;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition-property: background-color;
+    transition-duration: 600ms;
+    background-color: var(--grey-700);
+    border-radius: 8px;
+}
 
-                .social-link-container {
-                    display: grid;
-                    place-content: center;
-                    width: 304px;
-                    height: 45px;
-                    text-align: center;
-                    text-decoration: none;
-                    color: white;
-                    transition-property: background-color, display;
-                    transition-duration: 600ms;
-                    background-color: #333333;
-                    border-radius: 8px;
+/* Hover for pointer users */
+.social-link-container:hover {
+    transition-property: background-color;
+    transition-duration: 600ms;
+    background-color: var(--green);
+    color: var(--grey-700);
+}
 
-                    &:hover {
-                        transition-property: background-color, display;
-                        transition-duration: 600ms;
-                        background-color: #C4F82A;
-                        color: #333333;
-                    }
-                }
-            }
-        }
-    }
+/* Focus for keyboard users — use :focus-visible where supported */
+.social-link-container:focus,
+.social-link-container:focus-visible {
+    transition-property: background-color;
+    transition-duration: 600ms;
+    background-color: var(--green);
+    color: var(--grey-700);
 }
