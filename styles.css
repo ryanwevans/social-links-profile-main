@@ -63,10 +63,10 @@ body {
     width: min(90vw, 384px);   /* fluid: up to 384px, but no more than 90% of viewport */
     max-width: 384px;          /* explicit max to preserve desktop design */
     height: auto;              /* avoid fixed height so content flows naturally */
-    min-height: 40vh;          /* optional: ensure a reasonable minimum height on tall screens */
+    min-height: 611px;          /* optional: ensure a reasonable minimum height on tall screens */
     box-sizing: border-box;    /* include padding/borders in size calculations */
     padding: 1rem;             /* room for content so it doesn't touch edges */
-    margin: 2.5rem;
+    margin: 40px;
     background-color: var(--grey-800);
     border-radius: 12px;
 }
