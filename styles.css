@@ -116,17 +116,17 @@ body {
     border-radius: 8px;
 }
 
-/* Hover for pointer users */
-.social-link-container:hover {
+/* Focus for keyboard users — use :focus-visible where supported */
+.social-link-container:focus-visible,
+.social-link-container:focus {
     transition-property: background-color;
     transition-duration: 600ms;
     background-color: var(--green);
     color: var(--grey-700);
 }
 
-/* Focus for keyboard users — use :focus-visible where supported */
-.social-link-container:focus,
-.social-link-container:focus-visible {
+/* Hover for pointer users */
+.social-link-container:hover {
     transition-property: background-color;
     transition-duration: 600ms;
     background-color: var(--green);
