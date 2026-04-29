@@ -132,3 +132,5 @@ body {
     background-color: var(--green);
     color: var(--grey-700);
 }
+
+a:focus { outline: 2px solid var(--green); outline-offset: 2px; }
